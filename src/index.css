@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Cinzel', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #08131f;
+    color: #f3ead8;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+@keyframes floatPop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 6px) scale(0.85);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -6px) scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -28px) scale(0.95);
+  }
+}
+
+@keyframes pulseRing {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes hitFlash {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-dash-flow {
+  animation: dashFlow 1.1s linear infinite;
+}
+
+.animate-float-pop {
+  animation: floatPop 1.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 1.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animate-hit-flash {
+  animation: hitFlash 360ms ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-dash-flow,
+  .animate-pulse-ring {
+    animation: none;
+  }
+}

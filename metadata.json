@@ -1,0 +1,8 @@
+{
+  "name": "Atlas Chiến Lược",
+  "description": "Game chiến thuật bản đồ chinh phạt lãnh thổ theo lượt với đồ họa bản đồ hàng hải cổ điển.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
